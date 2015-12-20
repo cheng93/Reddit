@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Reddit235
 {
     public class Solution
     {
-
         public string Decrypt(string key, string message)
         {
             var cipher = GetCipher(key);
@@ -40,6 +41,18 @@ namespace Reddit235
                 output.Add(split[2*i + 1], split[2*i]);
             }
             return output;
+        }
+
+        /// <summary>
+        /// Encypts a message.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns>Returns a tuple, where Item1 is the cipher and Item2 is the encrypted message.</returns>
+        public Tuple<string, string> Encrypt(string message)
+        {
+            var stripedMessage = message.Where(char.IsLetter).Aggregate<char, string>(null, (current, c) => current + c);
+            var huffman = new Huffman();
+            return null;
         }
     }
 }
