@@ -50,9 +50,38 @@ namespace Reddit235
         /// <returns>Returns a tuple, where Item1 is the cipher and Item2 is the encrypted message.</returns>
         public Tuple<string, string> Encrypt(string message)
         {
-            var stripedMessage = message.Where(char.IsLetter).Aggregate<char, string>(null, (current, c) => current + c);
+            var strippedMessage = message.Where(char.IsLetter).Aggregate<char, string>(null, (current, c) => current + c);
             var huffman = new Huffman();
-            return null;
+            huffman.Build(strippedMessage);
+            var cipher = huffman.GetCipher();
+            return new Tuple<string, string>(CipherToString(cipher), EncrpytMessage(cipher, message));
+        }
+
+        private string CipherToString(Dictionary<char, string> cipher)
+        {
+            string output = null;
+            foreach (var keyValuePair in cipher)
+            {
+                output = string.Join(" ", keyValuePair.Key + " " + keyValuePair.Value, output);
+            }
+            return output;
+        }
+
+        private string EncrpytMessage(Dictionary<char, string> cipher, string message)
+        {
+            string output = null;
+            foreach (var m in message)
+            {
+                if (cipher.ContainsKey(m))
+                {
+                    output += cipher[m];
+                }
+                else
+                {
+                    output += m;
+                }
+            }
+            return output;
         }
     }
 }
