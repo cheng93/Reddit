@@ -14,9 +14,9 @@ namespace Reddit235
 
             var solution = new Solution();
             var encrypted = solution.Encrypt(originalMessage);
-            Console.WriteLine("Encrypt Cipher");
+            Console.WriteLine("Encrypted Cipher");
             Console.WriteLine(encrypted.Item1);
-            Console.WriteLine("Encrypt Message");
+            Console.WriteLine("Encrypted Message");
             Console.WriteLine(encrypted.Item2);
             Console.WriteLine("Decrypted Message");
             Console.WriteLine(solution.Decrypt(encrypted.Item1, encrypted.Item2));
