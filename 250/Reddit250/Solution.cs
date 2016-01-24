@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Reddit250
 {
-    public class Solution
+    public class Solution : IReddit250
     {
         public bool IsSelfDescriptive(long number)
         {

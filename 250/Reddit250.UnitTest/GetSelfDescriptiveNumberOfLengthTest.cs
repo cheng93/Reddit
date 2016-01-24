@@ -7,7 +7,7 @@ namespace Reddit250.UnitTest
     [TestClass]
     public class GetSelfDescriptiveNumberOfLengthTest
     {
-        private Solution _solution;
+        private IReddit250 _solution;
 
         [TestInitialize]
         public void Initialize()
