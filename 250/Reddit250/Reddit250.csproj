@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="IReddit250.cs" />
     <Compile Include="NewSolution.cs" />
+    <Compile Include="Partition.cs" />
     <Compile Include="Solution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
