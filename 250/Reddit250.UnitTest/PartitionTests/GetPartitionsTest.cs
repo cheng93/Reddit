@@ -12,7 +12,7 @@ namespace Reddit250.UnitTest.PartitionTests
         {
             var expected = new List<Partition>
             {
-                new Partition(new List<int> {1})
+                new Partition(new List<uint> {1})
             };
 
             var actual = Partition.GetPartitions(1).ToList();
@@ -24,8 +24,8 @@ namespace Reddit250.UnitTest.PartitionTests
         {
             var expected = new List<Partition>
             {
-                new Partition(new List<int> {2}),
-                new Partition(new List<int> {1,1})
+                new Partition(new List<uint> {2}),
+                new Partition(new List<uint> {1,1})
             };
             var actual = Partition.GetPartitions(2).ToList();
             CollectionAssert.AreEquivalent(expected, actual);
@@ -36,9 +36,9 @@ namespace Reddit250.UnitTest.PartitionTests
         {
             var expected = new List<Partition>
             {
-                new Partition(new List<int> {3}),
-                new Partition(new List<int> {2,1}),
-                new Partition(new List<int> {1,1,1})
+                new Partition(new List<uint> {3}),
+                new Partition(new List<uint> {2,1}),
+                new Partition(new List<uint> {1,1,1})
             };
             var actual = Partition.GetPartitions(3).ToList();
             CollectionAssert.AreEquivalent(expected, actual);
@@ -49,11 +49,11 @@ namespace Reddit250.UnitTest.PartitionTests
         {
             var expected = new List<Partition>
             {
-                new Partition(new List<int> {4}),
-                new Partition(new List<int> {3,1}),
-                new Partition(new List<int> {2,2}),
-                new Partition(new List<int> {2,1,1}),
-                new Partition(new List<int> {1,1,1,1})
+                new Partition(new List<uint> {4}),
+                new Partition(new List<uint> {3,1}),
+                new Partition(new List<uint> {2,2}),
+                new Partition(new List<uint> {2,1,1}),
+                new Partition(new List<uint> {1,1,1,1})
             };
             var actual = Partition.GetPartitions(4).ToList();
             CollectionAssert.AreEquivalent(expected, actual);

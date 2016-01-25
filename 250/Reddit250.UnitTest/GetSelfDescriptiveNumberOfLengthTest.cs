@@ -12,7 +12,7 @@ namespace Reddit250.UnitTest
         [TestInitialize]
         public void Initialize()
         {
-            _solution = new Solution();
+            _solution = new NewSolution();
         }
 
         [TestMethod]
@@ -33,18 +33,18 @@ namespace Reddit250.UnitTest
         public void Four()
         {
             var actual = _solution.GetSelfDescriptiveNumberOfLength(4).ToList();
-            var expected = new List<long> { 1210, 2020 };
+            var expected = new List<ulong> { 1210, 2020 };
 
-            CollectionAssert.AreEqual(expected, actual);
+            CollectionAssert.AreEquivalent(expected, actual);
         }
 
         [TestMethod]
         public void Five()
         {
             var actual = _solution.GetSelfDescriptiveNumberOfLength(5).ToList();
-            var expected = new List<long> { 21200 };
+            var expected = new List<ulong> { 21200 };
 
-            CollectionAssert.AreEqual(expected, actual);
+            CollectionAssert.AreEquivalent(expected, actual);
         }
     }
 }

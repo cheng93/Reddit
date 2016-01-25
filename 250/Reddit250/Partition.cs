@@ -5,24 +5,24 @@ namespace Reddit250
 {
     public class Partition
     {
-        public ICollection<int> Values { get; private set; }
+        public ICollection<uint> Values { get; private set; }
 
-        public Partition(ICollection<int> values)
+        public Partition(ICollection<uint> values)
         {
             Values = values;
         }
 
-        public static IEnumerable<Partition> GetPartitions(int number)
+        public static IEnumerable<Partition> GetPartitions(uint number)
         {
             var output = new List<Partition>();
             for (var i = number; i > 0; i--)
             {
-                var list = new List<int> {i};
+                var list = new List<uint> {i};
                 bool yielded = false;
                 var partitions = GetPartitions(number - i);
                 foreach (var partition in partitions)
                 {
-                    var partitionedList = new List<int>(list);
+                    var partitionedList = new List<uint>(list);
                     partitionedList.AddRange(partition.Values);
                     yielded = true;
                     output.Add(new Partition(partitionedList));

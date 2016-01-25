@@ -7,7 +7,7 @@ namespace Reddit250
 {
     public class Solution : IReddit250
     {
-        public bool IsSelfDescriptive(long number)
+        public bool IsSelfDescriptive(ulong number)
         {
             var numberAsString = number.ToString(CultureInfo.InvariantCulture);
             var upperBound = numberAsString.Length < 10 ? numberAsString.Length : 10;
@@ -22,7 +22,7 @@ namespace Reddit250
             return true;
         }
 
-        public IEnumerable<long> GetSelfDescriptiveNumberOfLength(int length)
+        public IEnumerable<ulong> GetSelfDescriptiveNumberOfLength(uint length)
         {
             var start = GetLowerBound(length);
             var end = GetUpperBound(length);
@@ -35,18 +35,18 @@ namespace Reddit250
             }
         }
 
-        private long GetLowerBound(int length)
+        private ulong GetLowerBound(uint length)
         {
             return Multipler(1, length);
         }
 
-        private long GetUpperBound(int length)
+        private ulong GetUpperBound(uint length)
         {
             var start = length;
             return Multipler(start, length);
         }
 
-        private long Multipler(long start, int length)
+        private ulong Multipler(ulong start, uint length)
         {
             for (var i = 0; i < length - 1; i++)
             {
@@ -55,7 +55,7 @@ namespace Reddit250
             return start;
         }
 
-        private long GetNextValue(long currentValue, long upperBound, int length)
+        private ulong GetNextValue(ulong currentValue, ulong upperBound, uint length)
         {
             var interval = GetInterval(length);
             for (var i = currentValue + interval; i < upperBound; i = i + interval)
@@ -68,18 +68,18 @@ namespace Reddit250
             return upperBound;
         }
 
-        private int SumDigits(long number)
+        private uint SumDigits(ulong number)
         {
-            var sum = 0;
+            uint sum = 0;
             while (number != 0)
             {
-                sum += (int)(number % 10);
+                sum += (uint)(number % 10);
                 number /= 10;
             }
             return sum;
         }
 
-        private long GetInterval(int length)
+        private ulong GetInterval(uint length)
         {
             var upperBound = length - 10 > 0 ? length - 10 : 0;
             return Multipler(10, upperBound);

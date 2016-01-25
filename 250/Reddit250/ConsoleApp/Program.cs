@@ -8,13 +8,13 @@ namespace ConsoleApp
     {
         private static void Main(string[] args)
         {
-            var solution = new Solution();
+            var solution = new NewSolution();
             Console.WriteLine("Enter your length.");
-            var length = int.Parse(Console.ReadLine());
-            var numbers = solution.GetSelfDescriptiveNumberOfLength(length);
+            var length = uint.Parse(Console.ReadLine());
+            var numbers = solution.GetSelfDescriptiveNumberOfLength(length).ToList();
             if (numbers.Any())
             {
-                foreach (var number in solution.GetSelfDescriptiveNumberOfLength(length))
+                foreach (var number in numbers)
                 {
                     Console.WriteLine(number);
                 }

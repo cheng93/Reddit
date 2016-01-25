@@ -4,7 +4,7 @@ namespace Reddit250
 {
     public interface IReddit250
     {
-        bool IsSelfDescriptive(long number);
-        IEnumerable<long> GetSelfDescriptiveNumberOfLength(int length);
+        bool IsSelfDescriptive(ulong number);
+        IEnumerable<ulong> GetSelfDescriptiveNumberOfLength(uint length);
     }
 }
