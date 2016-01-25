@@ -52,7 +52,9 @@
   <ItemGroup>
     <Compile Include="GetSelfDescriptiveNumberOfLengthTest.cs" />
     <Compile Include="IsSelfDescriptiveTest.cs" />
+    <Compile Include="PartitionTests\EqualsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PartitionTests\GetPartitionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reddit250\Reddit250.csproj">
