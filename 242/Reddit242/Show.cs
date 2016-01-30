@@ -2,7 +2,7 @@
 
 namespace Reddit242
 {
-    internal class Show : IShow
+    public class Show
     {
         public DateTime Start { get; private set; }
 

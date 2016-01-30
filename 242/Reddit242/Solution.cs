@@ -4,7 +4,7 @@ namespace Reddit242
 {
     public class Solution
     {
-        public IReadOnlyCollection<IShow> Solve(IReadOnlyCollection<IShow> shows)
+        public IReadOnlyCollection<Show> Solve(IReadOnlyCollection<Show> shows)
         {
             return null;
         }
