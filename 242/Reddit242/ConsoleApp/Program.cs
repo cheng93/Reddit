@@ -8,7 +8,8 @@ namespace ConsoleApp
 {
     class Program
     {
-        private static IReddit242 _reddit242 = new Solution();
+        private static readonly IBonusReddit242 Reddit242 = new BonusSolution();
+
         static void Main(string[] args)
         {
             var input = new List<string>()
@@ -59,7 +60,7 @@ namespace ConsoleApp
                 shows.Add(new Show(startTime, endTime, name));
             }
 
-            var recordedShows = _reddit242.Solve(shows);
+            var recordedShows = Reddit242.Solve(shows);
 
             foreach (var show in recordedShows.OrderBy(s => s.Start))
             {
