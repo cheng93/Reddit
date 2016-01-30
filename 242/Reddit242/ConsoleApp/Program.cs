@@ -24,18 +24,26 @@ namespace ConsoleApp
                 //"1725 1810"
 
                 // Challenge Input 2
-                "1555 1630",
-                "1600 1635",
-                "1600 1640",
-                "1610 1640",
-                "1625 1720",
-                "1635 1720",
-                "1645 1740",
-                "1650 1720",
-                "1710 1730",
-                "1715 1810",
-                "1720 1740",
-                "1725 1810"
+                //"1555 1630",
+                //"1600 1635",
+                //"1600 1640",
+                //"1610 1640",
+                //"1625 1720",
+                //"1635 1720",
+                //"1645 1740",
+                //"1650 1720",
+                //"1710 1730",
+                //"1715 1810",
+                //"1720 1740",
+                //"1725 1810"
+
+                //Challenge Input 3
+                "1535 1610 Pokémon",
+                "1610 1705 Law & Order",
+                "1615 1635 ER",
+                "1615 1635 Ellen",
+                "1615 1705 Family Matters",
+                "1725 1810 The Fresh Prince of Bel-Air"
             };
 
             var shows = new List<Show>();
@@ -43,7 +51,12 @@ namespace ConsoleApp
             {
                 var startTime = DateTime.ParseExact(line.Substring(0, 4), "HHmm", CultureInfo.InvariantCulture);
                 var endTime = DateTime.ParseExact(line.Substring(5, 4), "HHmm", CultureInfo.InvariantCulture);
-                shows.Add(new Show(startTime, endTime));
+                string name = null;
+                if (line.Length > 9)
+                {
+                    name = line.Substring(10);
+                }
+                shows.Add(new Show(startTime, endTime, name));
             }
 
             var recordedShows = _reddit242.Solve(shows);
@@ -52,7 +65,7 @@ namespace ConsoleApp
             {
                 var startTime = show.Start.ToString("HHmm");
                 var endTime = show.End.ToString("HHmm");
-                Console.WriteLine("{0} {1}", startTime, endTime);
+                Console.WriteLine("{0} {1} {2}", startTime, endTime, show.Name);
             }
             Console.WriteLine(recordedShows.Count);
             Console.ReadLine();
