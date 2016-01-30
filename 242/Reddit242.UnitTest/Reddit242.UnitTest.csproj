@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="SolutionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BonusSolutionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reddit242\Reddit242.csproj">
