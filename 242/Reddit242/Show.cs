@@ -10,10 +10,11 @@ namespace Reddit242
 
         public string Name { get; private set; }
 
-        public Show(DateTime start, DateTime end)
+        public Show(DateTime start, DateTime end, string name = null)
         {
             Start = start;
             End = end;
+            Name = name;
         }
     }
 }
