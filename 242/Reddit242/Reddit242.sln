@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reddit242", "Reddit242.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reddit242.UnitTest", "..\Reddit242.UnitTest\Reddit242.UnitTest.csproj", "{614597D3-C162-45F3-909A-1EB724EB8766}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{82FB511C-A29B-4415-82D3-3ED1F7191669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{614597D3-C162-45F3-909A-1EB724EB8766}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{614597D3-C162-45F3-909A-1EB724EB8766}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{614597D3-C162-45F3-909A-1EB724EB8766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82FB511C-A29B-4415-82D3-3ED1F7191669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82FB511C-A29B-4415-82D3-3ED1F7191669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82FB511C-A29B-4415-82D3-3ED1F7191669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82FB511C-A29B-4415-82D3-3ED1F7191669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

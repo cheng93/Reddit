@@ -8,6 +8,8 @@ namespace Reddit242
 
         public DateTime End { get; private set; }
 
+        public string Name { get; private set; }
+
         public Show(DateTime start, DateTime end)
         {
             Start = start;

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Reddit242
 {
-    public class Solution
+    public class Solution : IReddit242
     {
         public IReadOnlyCollection<Show> Solve(IReadOnlyCollection<Show> shows)
         {

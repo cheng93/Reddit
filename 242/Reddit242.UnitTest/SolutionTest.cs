@@ -7,7 +7,7 @@ namespace Reddit242.UnitTest
     [TestClass]
     public class SolutionTest
     {
-        private readonly Solution _solution = new Solution();
+        private readonly IReddit242 _solution = new Solution();
 
         [TestMethod]
         public void Single()
