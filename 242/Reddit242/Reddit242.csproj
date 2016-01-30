@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BonusSolution.cs" />
     <Compile Include="IReddit242.cs" />
     <Compile Include="Show.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
