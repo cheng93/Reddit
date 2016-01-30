@@ -38,16 +38,25 @@ namespace ConsoleApp
                 //"1720 1740",
                 //"1725 1810"
 
-                //Challenge Input 3
-                "1535 1610 Pokémon",
-                "1610 1705 Law & Order",
-                "1615 1635 ER",
-                "1615 1635 Ellen",
-                "1615 1705 Family Matters",
-                "1725 1810 The Fresh Prince of Bel-Air"
+                // Challenge Bonus 1
+                //"1535 1610 Pokémon",
+                //"1610 1705 Law & Order",
+                //"1615 1635 ER",
+                //"1615 1635 Ellen",
+                //"1615 1705 Family Matters",
+                //"1725 1810 The Fresh Prince of Bel-Air"
+
+                // Challenge Bonus 2
+                "1530 1555 3rd Rock from the Sun",
+                "1550 1615 The Fresh Prince of Bel-Air",
+                "1555 1615 Mad About You",
+                "1615 1650 Ellen",
+                "1655 1735 Quantum Leap"
             };
 
             var shows = new List<Show>();
+            var preferredShowName = "The Fresh Prince of Bel-Air";
+
             foreach (var line in input)
             {
                 var startTime = DateTime.ParseExact(line.Substring(0, 4), "HHmm", CultureInfo.InvariantCulture);
@@ -60,7 +69,7 @@ namespace ConsoleApp
                 shows.Add(new Show(startTime, endTime, name));
             }
 
-            var recordedShows = Reddit242.Solve(shows);
+            var recordedShows = Reddit242.Solve(shows, preferredShowName);
 
             foreach (var show in recordedShows.OrderBy(s => s.Start))
             {
