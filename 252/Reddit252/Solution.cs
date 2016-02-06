@@ -23,7 +23,15 @@ namespace Reddit252
                 pair = _pairGetter.GetWidestLeftMostPair(input);
             }
 
-            throw new NotImplementedException();
+            var output = TrimAfterUnderscore(input);
+            return TrimAfterUnderscore(output);
+        }
+
+        private string TrimAfterUnderscore(string input)
+        {
+            var index = input.IndexOf('_');
+            input = index == -1 ? input : input.Substring(0, index - 1);
+            return input;
         }
     }
 }
