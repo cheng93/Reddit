@@ -106,6 +106,17 @@ namespace Reddit252.UnitTest
         }
 
         [TestMethod]
+        public void MultiplePair_SameLength_Alternate()
+        {
+            const string input = "abab";
+
+            var actual = _pairGetter.GetWidestLeftMostPair(input);
+            const char expected = 'a';
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void MultiplePair_LeftLongerLength()
         {
             const string input = "acabb";
@@ -120,6 +131,28 @@ namespace Reddit252.UnitTest
         public void MultiplePair_RightLongerLength()
         {
             const string input = "aabcb";
+
+            var actual = _pairGetter.GetWidestLeftMostPair(input);
+            const char expected = 'b';
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PairInAPair_LeftLongerLength()
+        {
+            const string input = "acbab";
+
+            var actual = _pairGetter.GetWidestLeftMostPair(input);
+            const char expected = 'a';
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PairInAPair_RightLongerLength()
+        {
+            const string input = "abacb";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
             const char expected = 'b';
