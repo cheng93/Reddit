@@ -10,7 +10,7 @@ namespace Reddit252
         public char? GetWidestLeftMostPair(string input)
         {
             char? output = null;
-            int lengthBetweenPair = 0;
+            int? lengthBetweenPair = null;
 
             for (var i = 0; i < input.Length - 1; i++)
             {
@@ -37,7 +37,7 @@ namespace Reddit252
                         }
                     }
 
-                    if (lengthBetweenIndexes > lengthBetweenPair)
+                    if (!lengthBetweenPair.HasValue || lengthBetweenIndexes > lengthBetweenPair)
                     {
                         output = character;
                         lengthBetweenPair = lengthBetweenIndexes;
