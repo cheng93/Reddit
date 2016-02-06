@@ -27,6 +27,12 @@ namespace Reddit252
             return TrimAfterUnderscore(output);
         }
 
+        public static Solution Get()
+        {
+            var pairGetter = new PairGetter();
+            return new Solution(pairGetter, new StringUpdater(pairGetter));
+        }
+
         private string TrimAfterUnderscore(string input)
         {
             var index = input.IndexOf('_');
