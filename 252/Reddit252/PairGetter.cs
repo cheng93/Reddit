@@ -43,8 +43,6 @@ namespace Reddit252
                         lengthBetweenPair = lengthBetweenIndexes;
                     }
                 }
-
-                return output;
             }
             return output;
         }
