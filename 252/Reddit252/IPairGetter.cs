@@ -2,6 +2,6 @@
 {
     public interface IPairGetter
     {
-        char GetPair(string input);
+        char? GetWidestLeftMostPair(string input);
     }
 }

@@ -5,7 +5,7 @@ namespace Reddit252
 {
     internal class PairGetter : IPairGetter
     {
-        public char GetPair(string input)
+        public char? GetWidestLeftMostPair(string input)
         {
             
         }
