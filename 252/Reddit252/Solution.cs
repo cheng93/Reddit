@@ -6,9 +6,12 @@ namespace Reddit252
     {
         private readonly IPairGetter _pairGetter;
 
-        public Solution(IPairGetter pairGetter)
+        private readonly IStringUpdater _stringUpdater;
+
+        public Solution(IPairGetter pairGetter, IStringUpdater stringUpdater)
         {
             _pairGetter = pairGetter;
+            _stringUpdater = stringUpdater;
         }
 
         public string Solve(string input)
@@ -16,7 +19,7 @@ namespace Reddit252
             var pair = _pairGetter.GetWidestLeftMostPair(input);
             while (pair != null)
             {
-                throw new NotImplementedException();
+                input = _stringUpdater.UpdateWithPair(input, pair.Value);
                 pair = _pairGetter.GetWidestLeftMostPair(input);
             }
 
