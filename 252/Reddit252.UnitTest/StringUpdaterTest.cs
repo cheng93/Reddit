@@ -5,7 +5,7 @@ namespace Reddit252.UnitTest
     [TestClass]
     public class StringUpdaterTest
     {
-        private readonly IStringUpdater _stringUpdater = new StringUpdater();
+        private readonly IStringUpdater _stringUpdater = new StringUpdater(new PairGetter());
 
         [TestMethod]
         public void Example_1()
@@ -98,6 +98,30 @@ namespace Reddit252.UnitTest
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "baccdea";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MultipleOccuranceOfPair_LeftLonger_HasDuplicate()
+        {
+            const string input = "baccadae";
+            const char pair = 'a';
+
+            var actual = _stringUpdater.UpdateWithPair(input, pair);
+            var expected = "baccdea";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MultipleOccuranceOfPair_RightLonger_HasDuplicate()
+        {
+            const string input = "bacaddae";
+            const char pair = 'a';
+
+            var actual = _stringUpdater.UpdateWithPair(input, pair);
+            var expected = "bcddaea";
 
             Assert.AreEqual(expected, actual);
         }
