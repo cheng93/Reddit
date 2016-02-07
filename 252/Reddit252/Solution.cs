@@ -27,7 +27,7 @@
 
         public static Solution Get()
         {
-            return new Solution(new PairGetter(), new StringUpdater());
+            return new Solution(new NewPairGetter(), new StringUpdater());
         }
 
         private string TrimAfterUnderscore(string input)
