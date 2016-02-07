@@ -128,12 +128,34 @@ namespace Reddit252.UnitTest
         }
 
         [TestMethod]
+        public void MultiplePair_LeftLongerLength_SameCharacters()
+        {
+            const string input = "abcaca";
+
+            var actual = _pairGetter.GetWidestLeftMostPair(input);
+            var expected = new Pair('a', 0, 3);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void MultiplePair_RightLongerLength()
         {
             const string input = "aabcb";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
             var expected = new Pair('b', 2, 4);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MultiplePair_RightLongerLength_SameCharacters()
+        {
+            const string input = "ababca";
+
+            var actual = _pairGetter.GetWidestLeftMostPair(input);
+            var expected = new Pair('a', 2, 5);
 
             Assert.AreEqual(expected, actual);
         }
