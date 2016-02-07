@@ -9,13 +9,12 @@ namespace Reddit252
     {
         public string UpdateWithPair(string input, char pair)
         {
-            var indexesOfPair = GetIndexesOfChar(input, pair);
             int? indexA = null;
             int? indexB = null;
 
-            foreach (var index in indexesOfPair)
+            foreach (var index in GetIndexesOfChar(input, pair))
             {
-                foreach (var otherIndex in indexesOfPair.Where(i => i > index))
+                foreach (var otherIndex in GetIndexesOfChar(input, pair).Where(i => i > index))
                 {
                     var lengthInsideIndexes = otherIndex - (index + 1);
                     var innerString = input.Substring(index + 1, lengthInsideIndexes);
@@ -45,18 +44,15 @@ namespace Reddit252
             return input;
         }
 
-        private List<int> GetIndexesOfChar(string input, char character)
+        private IEnumerable<int> GetIndexesOfChar(string input, char character)
         {
-            var indexes = new List<int>();
             var index = input.IndexOf(character);
 
             while (index > -1)
             {
-                indexes.Add(index);
+                yield return index;
                 index = input.IndexOf(character, index + 1);
             }
-
-            return indexes;
         }
     }
 }

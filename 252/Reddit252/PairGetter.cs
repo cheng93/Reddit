@@ -20,10 +20,8 @@ namespace Reddit252
                 {
                     continue;
                 }
-
-                var indexesOfCharacter = GetIndexesOfChar(input, character);
-
-                foreach (var index in indexesOfCharacter.Where(x => x > i))
+                
+                foreach (var index in GetIndexesOfChar(input, character).Where(x => x > i))
                 {
                     var lengthBetweenIndexes = index - (i + 1);
 
@@ -47,18 +45,15 @@ namespace Reddit252
             return output;
         }
 
-        private List<int> GetIndexesOfChar(string input, char character)
+        private IEnumerable<int> GetIndexesOfChar(string input, char character)
         {
-            var indexes = new List<int>();
             var index = input.IndexOf(character);
 
             while (index > -1)
             {
-                indexes.Add(index);
+                yield return index;
                 index = input.IndexOf(character, index + 1);
             }
-
-            return indexes;
         }
     }
 }
