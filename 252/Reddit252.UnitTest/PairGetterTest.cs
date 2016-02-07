@@ -192,5 +192,16 @@ namespace Reddit252.UnitTest
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void HardSituation()
+        {
+            const string input = "abcababcda";
+
+            var actual = _pairGetter.GetWidestLeftMostPair(input);
+            var expected = new Pair('a', 5, 9);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
