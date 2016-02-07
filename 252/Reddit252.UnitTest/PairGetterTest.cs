@@ -5,7 +5,7 @@ namespace Reddit252.UnitTest
     [TestClass]
     public class PairGetterTest
     {
-        private readonly IPairGetter _pairGetter = new PairGetter();
+        private readonly IPairGetter _pairGetter = new NewPairGetter();
 
         [TestMethod]
         public void Example_1()

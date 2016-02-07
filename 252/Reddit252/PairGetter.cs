@@ -10,7 +10,6 @@ namespace Reddit252
         public Pair GetWidestLeftMostPair(string input)
         {
             Pair output = null;
-            int? lengthBetweenPair = null;
 
             for (var i = 0; i < input.Length - 1; i++)
             {
@@ -21,9 +20,14 @@ namespace Reddit252
                     continue;
                 }
                 
-                foreach (var index in GetIndexesOfChar(input, character).Where(x => x > i))
+                foreach (var index in GetIndexesOfChar(input, character).Where(x => x > i).Reverse())
                 {
                     var lengthBetweenIndexes = index - (i + 1);
+
+                    if (output != null && lengthBetweenIndexes <= output.EndIndex - (output.StartIndex + 1))
+                    {
+                        continue;
+                    }
 
                     if (lengthBetweenIndexes > 0)
                     {
@@ -35,10 +39,10 @@ namespace Reddit252
                         }
                     }
 
-                    if (!lengthBetweenPair.HasValue || lengthBetweenIndexes > lengthBetweenPair)
+                    if (output == null || lengthBetweenIndexes > output.EndIndex - (output.StartIndex + 1))
                     {
                         output = new Pair(character, i, index);
-                        lengthBetweenPair = lengthBetweenIndexes;
+                        break;
                     }
                 }
             }
