@@ -29,9 +29,9 @@ namespace Reddit252
 
                     if (lengthBetweenIndexes > 0)
                     {
-                        var pairWithinIndexes = GetWidestLeftMostPair(input.Substring(i + 1, lengthBetweenIndexes));
-
-                        if (pairWithinIndexes != null)
+                        var innerString = input.Substring(i + 1, lengthBetweenIndexes);
+                        
+                        if (innerString.Select(c => c).Distinct().Count() != lengthBetweenIndexes)
                         {
                             break;
                         }
