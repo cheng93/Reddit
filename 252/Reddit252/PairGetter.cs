@@ -7,9 +7,9 @@ namespace Reddit252
 {
     internal class PairGetter : IPairGetter
     {
-        public char? GetWidestLeftMostPair(string input)
+        public Pair GetWidestLeftMostPair(string input)
         {
-            char? output = null;
+            Pair output = null;
             int? lengthBetweenPair = null;
 
             for (var i = 0; i < input.Length - 1; i++)
@@ -37,7 +37,7 @@ namespace Reddit252
 
                     if (!lengthBetweenPair.HasValue || lengthBetweenIndexes > lengthBetweenPair)
                     {
-                        output = character;
+                        output = new Pair(character, i, index);
                         lengthBetweenPair = lengthBetweenIndexes;
                     }
                 }
