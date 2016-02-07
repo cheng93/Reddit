@@ -15,6 +15,7 @@
         public string Solve(string input)
         {
             var pair = _pairGetter.GetWidestLeftMostPair(input);
+
             while (pair != null)
             {
                 input = _stringUpdater.UpdateWithPair(input, pair);
@@ -32,9 +33,7 @@
 
         private string TrimAfterUnderscore(string input)
         {
-            var index = input.IndexOf('_');
-            input = index == -1 ? input : input.Substring(0, index);
-            return input;
+            return input.Split('_')[0];
         }
     }
 }
