@@ -2,6 +2,6 @@
 {
     public interface IStringUpdater
     {
-        string UpdateWithPair(string input, char pair);
+        string UpdateWithPair(string input, Pair pair);
     }
 }
