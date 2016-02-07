@@ -5,7 +5,7 @@ namespace Reddit252.UnitTest
     [TestClass]
     public class StringUpdaterTest
     {
-        private readonly IStringUpdater _stringUpdater = new StringUpdater(new PairGetter());
+        private readonly IStringUpdater _stringUpdater = new StringUpdater();
 
         [TestMethod]
         public void Example_1()

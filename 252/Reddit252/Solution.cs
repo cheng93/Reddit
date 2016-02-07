@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Reddit252
+﻿namespace Reddit252
 {
     public class Solution
     {
@@ -29,14 +27,13 @@ namespace Reddit252
 
         public static Solution Get()
         {
-            var pairGetter = new PairGetter();
-            return new Solution(pairGetter, new StringUpdater(pairGetter));
+            return new Solution(new PairGetter(), new StringUpdater());
         }
 
         private string TrimAfterUnderscore(string input)
         {
             var index = input.IndexOf('_');
-            input = index == -1 ? input : input.Substring(0, index - 1);
+            input = index == -1 ? input : input.Substring(0, index);
             return input;
         }
     }
