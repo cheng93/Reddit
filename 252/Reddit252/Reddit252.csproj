@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="IPairGetter.cs" />
     <Compile Include="IStringUpdater.cs" />
+    <Compile Include="Pair.cs" />
     <Compile Include="PairGetter.cs" />
     <Compile Include="Solution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
