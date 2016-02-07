@@ -14,5 +14,31 @@
             StartIndex = startIndex;
             EndIndex = endIndex;
         }
+
+        public override bool Equals(object obj)
+        {
+            var pair = obj as Pair;
+            return Equals(pair);
+        }
+
+        protected bool Equals(Pair pair)
+        {
+            if (pair == null)
+                return false;
+            return Character == pair.Character
+                   && StartIndex == pair.StartIndex
+                   && EndIndex == pair.EndIndex;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = Character.GetHashCode();
+                hashCode = (hashCode * 397) ^ StartIndex;
+                hashCode = (hashCode * 397) ^ EndIndex;
+                return hashCode;
+            }
+        }
     }
 }
