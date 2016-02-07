@@ -17,7 +17,7 @@
             var pair = _pairGetter.GetWidestLeftMostPair(input);
             while (pair != null)
             {
-                input = _stringUpdater.UpdateWithPair(input, pair.Value);
+                input = _stringUpdater.UpdateWithPair(input, pair);
                 pair = _pairGetter.GetWidestLeftMostPair(input);
             }
 
