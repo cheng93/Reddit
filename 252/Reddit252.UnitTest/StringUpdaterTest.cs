@@ -11,7 +11,7 @@ namespace Reddit252.UnitTest
         public void Example_1()
         {
             const string input = "abcbba";
-            const char pair = 'b';
+            var pair = new Pair('b', 1, 4);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "acbab";
@@ -22,7 +22,7 @@ namespace Reddit252.UnitTest
         public void Example_2()
         {
             const string input = "aabcbded";
-            const char pair = 'b';
+            var pair = new Pair('b', 2, 4);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "aacdedb";
@@ -34,7 +34,7 @@ namespace Reddit252.UnitTest
         public void SimplePair_NothingInBetween()
         {
             const string input = "aa";
-            const char pair = 'a';
+            var pair = new Pair('a', 0, 1);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "a";
@@ -46,7 +46,7 @@ namespace Reddit252.UnitTest
         public void SimplePair_SomethingInBetween()
         {
             const string input = "aba";
-            const char pair = 'a';
+            var pair = new Pair('a', 0, 2);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "ba";
@@ -58,7 +58,7 @@ namespace Reddit252.UnitTest
         public void MultipleOccuranceOfPair()
         {
             const string input = "bacadae";
-            const char pair = 'a';
+            var pair = new Pair('a', 1, 5);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "bcadea";
@@ -70,7 +70,7 @@ namespace Reddit252.UnitTest
         public void MultipleOccuranceOfPair_EqualLength()
         {
             const string input = "bacacad";
-            const char pair = 'a';
+            var pair = new Pair('a', 1, 3);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "bccada";
@@ -82,7 +82,7 @@ namespace Reddit252.UnitTest
         public void MultipleOccuranceOfPair_LeftLonger()
         {
             const string input = "bacdacae";
-            const char pair = 'a';
+            var pair = new Pair('a', 1, 4);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "bcdcaea";
@@ -94,7 +94,7 @@ namespace Reddit252.UnitTest
         public void MultipleOccuranceOfPair_RightLonger()
         {
             const string input = "bacacdae";
-            const char pair = 'a';
+            var pair = new Pair('a', 3, 6);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "baccdea";
@@ -106,7 +106,7 @@ namespace Reddit252.UnitTest
         public void MultipleOccuranceOfPair_LeftLonger_HasDuplicate()
         {
             const string input = "baccadae";
-            const char pair = 'a';
+            var pair = new Pair('a', 4, 6);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "baccdea";
@@ -118,7 +118,7 @@ namespace Reddit252.UnitTest
         public void MultipleOccuranceOfPair_RightLonger_HasDuplicate()
         {
             const string input = "bacaddae";
-            const char pair = 'a';
+            var pair = new Pair('a', 1, 3);
 
             var actual = _stringUpdater.UpdateWithPair(input, pair);
             var expected = "bcddaea";
