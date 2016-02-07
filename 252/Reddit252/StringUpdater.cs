@@ -7,13 +7,6 @@ namespace Reddit252
 {
     internal class StringUpdater : IStringUpdater
     {
-        private readonly IPairGetter _pairGetter;
-
-        public StringUpdater(IPairGetter pairGetter)
-        {
-            _pairGetter = pairGetter;
-        }
-
         public string UpdateWithPair(string input, char pair)
         {
             var indexesOfPair = GetIndexesOfChar(input, pair);
@@ -25,9 +18,8 @@ namespace Reddit252
                 foreach (var otherIndex in indexesOfPair.Where(i => i > index))
                 {
                     var lengthInsideIndexes = otherIndex - (index + 1);
-                    var pairBetweenIndex = _pairGetter.GetWidestLeftMostPair(input.Substring(index + 1, lengthInsideIndexes));
-                    
-                    if (pairBetweenIndex.HasValue)
+                    var innerString = input.Substring(index + 1, lengthInsideIndexes);
+                    if (innerString.Select(c => c).Distinct().Count() != lengthInsideIndexes)
                     {
                         break;
                     }
