@@ -117,6 +117,17 @@ namespace Reddit252.UnitTest
         }
 
         [TestMethod]
+        public void MultiplePair_SameLength_Consecutive()
+        {
+            const string input = "aaaa";
+
+            var actual = _pairGetter.GetWidestLeftMostPair(input);
+            var expected = new Pair('a', 0, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void MultiplePair_LeftLongerLength()
         {
             const string input = "acabb";
