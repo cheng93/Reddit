@@ -13,7 +13,7 @@ namespace Reddit252.UnitTest
             const string input = "abcbba";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'b';
+            var expected = new Pair('b', 1, 4);
 
             Assert.AreEqual(expected, actual);
         }
@@ -24,7 +24,7 @@ namespace Reddit252.UnitTest
             const string input = "aabcbded";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'b';
+            var expected = new Pair('b', 2, 4);
 
             Assert.AreEqual(expected, actual);
         }
@@ -56,8 +56,8 @@ namespace Reddit252.UnitTest
             const string input = "aa";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'a';
-            
+            var expected = new Pair('a', 0, 1);
+
             Assert.AreEqual(expected, actual);
         }
 
@@ -67,7 +67,7 @@ namespace Reddit252.UnitTest
             const string input = "aba";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'a';
+            var expected = new Pair('a', 0, 2);
 
             Assert.AreEqual(expected, actual);
         }
@@ -78,7 +78,7 @@ namespace Reddit252.UnitTest
             const string input = "abba";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'b';
+            var expected = new Pair('b', 1, 2);
 
             Assert.AreEqual(expected, actual);
         }
@@ -89,7 +89,7 @@ namespace Reddit252.UnitTest
             const string input = "_b_";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = '_';
+            var expected = new Pair('_', 0, 2);
 
             Assert.AreEqual(expected, actual);
         }
@@ -100,7 +100,7 @@ namespace Reddit252.UnitTest
             const string input = "aabb";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'a';
+            var expected = new Pair('a', 0, 1);
 
             Assert.AreEqual(expected, actual);
         }
@@ -111,7 +111,7 @@ namespace Reddit252.UnitTest
             const string input = "abab";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'a';
+            var expected = new Pair('a', 0, 2);
 
             Assert.AreEqual(expected, actual);
         }
@@ -122,7 +122,7 @@ namespace Reddit252.UnitTest
             const string input = "acabb";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'a';
+            var expected = new Pair('a', 0, 2);
 
             Assert.AreEqual(expected, actual);
         }
@@ -133,7 +133,7 @@ namespace Reddit252.UnitTest
             const string input = "aabcb";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'b';
+            var expected = new Pair('b', 2, 4);
 
             Assert.AreEqual(expected, actual);
         }
@@ -144,7 +144,7 @@ namespace Reddit252.UnitTest
             const string input = "acbab";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'a';
+            var expected = new Pair('a', 0, 3);
 
             Assert.AreEqual(expected, actual);
         }
@@ -155,7 +155,7 @@ namespace Reddit252.UnitTest
             const string input = "abacb";
 
             var actual = _pairGetter.GetWidestLeftMostPair(input);
-            const char expected = 'b';
+            var expected = new Pair('b', 1, 4);
 
             Assert.AreEqual(expected, actual);
         }
