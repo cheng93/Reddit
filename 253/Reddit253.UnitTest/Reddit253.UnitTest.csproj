@@ -54,6 +54,7 @@
     <Compile Include="Mock\MockTerminals\MockTerminal.cs" />
     <Compile Include="Mock\MockTerminals\Example1.cs" />
     <Compile Include="Mock\MockTerminals\Example2.cs" />
+    <Compile Include="Mock\MockTerminals\MockTerminal_NonEmpty.cs" />
     <Compile Include="TerminalOutputterTests\OutputTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mock\MockCursorMover.cs" />
