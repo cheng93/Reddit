@@ -99,5 +99,16 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
             expected = 'C';
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Circumflex()
+        {
+            var terminal = new MockTerminal();
+            _terminalProcessor.Process(terminal, "^^");
+
+            var actual = terminal.GetValue(0, 0);
+            var expected = '^';
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
