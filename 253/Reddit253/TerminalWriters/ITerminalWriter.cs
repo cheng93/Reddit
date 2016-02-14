@@ -2,6 +2,6 @@
 {
     internal interface ITerminalWriter
     {
-        void Write(ITerminal terminal, char? value);
+        void Write(ITerminal terminal, char value);
     }
 }
