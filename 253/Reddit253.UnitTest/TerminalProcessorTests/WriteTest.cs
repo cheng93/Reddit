@@ -18,7 +18,6 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
 
             var actual = terminal.GetValue(0, 0);
             var expected = 'A';
-
             Assert.AreEqual(expected, actual);
         }
 
