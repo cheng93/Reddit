@@ -52,7 +52,9 @@
     <Compile Include="TerminalClearers\TerminalClearer.cs" />
     <Compile Include="TerminalProcessor.cs" />
     <Compile Include="TerminalOutputter.cs" />
+    <Compile Include="TerminalWriters\InsertWriter.cs" />
     <Compile Include="TerminalWriters\ITerminalWriter.cs" />
+    <Compile Include="TerminalWriters\OverrideWriter.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
