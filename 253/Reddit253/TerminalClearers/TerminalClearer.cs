@@ -8,14 +8,21 @@
             {
                 for (var j = 0; j < 10; j++)
                 {
-                    terminal.SetValue();
+                    terminal.ClearValue(i, j);
                 }
             }
         }
 
         public void Erase(ITerminal terminal)
         {
-            throw new System.NotImplementedException();
+            var cursor = terminal.GetCursor();
+            var row = cursor.Y;
+            var column = cursor.X;
+
+            for (var i = column; i < 10; i++)
+            {
+                terminal.ClearValue(row, i);
+            }
         }
     }
 }
