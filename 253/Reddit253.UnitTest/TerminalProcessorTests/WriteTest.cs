@@ -78,5 +78,27 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
             expected = 'C';
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Override_NonEmpty()
+        {
+            var terminal = new MockTerminal_NonEmpty();
+            _terminalProcessor.Process(terminal, "^oB");
+
+            var actual = terminal.GetValue(0, 0);
+            char? expected = 'B';
+            Assert.AreEqual(expected, actual);
+
+            actual = terminal.GetValue(0, 1);
+            expected = ' ';
+            Assert.AreEqual(expected, actual);
+
+            actual = terminal.GetValue(0, 2);
+            Assert.IsNull(actual);
+
+            actual = terminal.GetValue(0, 3);
+            expected = 'C';
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
