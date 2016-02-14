@@ -27,8 +27,8 @@ namespace Reddit253
         {
             _cursorMover = cursorMover ?? new CursorMover();
             _terminalClearer = terminalClearer ?? new TerminalClearer();
-            _insertWriter = insertWriter;
-            _overrideWriter = overrideWriter;
+            _insertWriter = insertWriter ?? new InsertWriter();
+            _overrideWriter = overrideWriter ?? new OverrideWriter();
         }
 
         public void Process(ITerminal terminal, string input)
