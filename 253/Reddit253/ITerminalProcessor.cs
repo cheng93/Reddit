@@ -2,7 +2,7 @@
 {
     public interface ITerminalProcessor
     {
-        bool IsInsertMode { get; set; }
+        bool IsInsertMode { get; }
         void Process(ITerminal terminal, string input);
     }
 }
