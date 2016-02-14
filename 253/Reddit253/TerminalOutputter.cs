@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -32,49 +33,41 @@ namespace Reddit253
             return output;
         }
 
-        private string ToString(IList<char?> characters)
+        private string ToString<T>(IList<T> items)
         {
             var builder = new StringBuilder();
+            Action<object> append;
+            Action appendEmpty;
 
-            for (int i = 0; i < 10; i++)
+            if (typeof(T) == typeof (string))
             {
-                var character = characters[i];
-                if (character != null)
-                {
-                    builder.Append(character);
-                }
-                else
-                {
-                    if (characters.Skip(i + 1).Take(9 - i).All(s => s == null))
-                    {
-                        break;
-                    }
-                    builder.Append(' ');
-                }
+                append = (o => builder.AppendLine((string)o));
+                appendEmpty = (() => builder.AppendLine());
+            }
+            else if (typeof(T) == typeof (char?))
+            {
+                append = (o => builder.Append(o));
+                appendEmpty = (() => builder.Append(' '));
+            }
+            else
+            {
+                throw new InvalidOperationException("items of not of type string or char");
             }
 
-            var output = builder.Length == 0 ? null : builder.ToString();
-            return output;
-        }
-
-        private string ToString(IList<string> rowStrings)
-        {
-            var builder = new StringBuilder();
-
             for (int i = 0; i < 10; i++)
             {
-                var line = rowStrings[i];
+                var line = items[i];
                 if (line != null)
                 {
-                    builder.AppendLine(line);
+                    append(line);
                 }
                 else
                 {
-                    if (rowStrings.Skip(i + 1).Take(9 - i).All(s => s == null))
+                    if (items.Skip(i + 1).Take(9 - i).All(s => s == null))
                     {
                         break;
                     }
-                    builder.AppendLine();
+                    appendEmpty();
                 }
             }
 
