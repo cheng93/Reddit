@@ -1,6 +1,6 @@
 ﻿using Reddit253.TerminalClearers;
 
-namespace Reddit253.UnitTest.TerminalProcessorTests.Mock
+namespace Reddit253.UnitTest.Mock
 {
     internal class MockTerminalClearer : ITerminalClearer
     {

@@ -1,15 +1,16 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 
-namespace Reddit253.UnitTest.TerminalOutputterTests.MockTerminals
+namespace Reddit253.UnitTest.Mock.MockTerminals
 {
-    internal class Empty : ITerminal
+    internal class MockTerminal : ITerminal
     {
         private readonly char?[,] _characters;
+        private Point _cursor;
 
-        public Empty()
+        public MockTerminal(char?[,] characters = null)
         {
-            _characters = new char?[10, 10];
+            _characters = characters ?? new char?[10, 10];
+            _cursor = new Point(0, 0);
         }
 
         public char? GetValue(int row, int column)
@@ -19,22 +20,23 @@ namespace Reddit253.UnitTest.TerminalOutputterTests.MockTerminals
 
         public void SetValue(int row, int column, char value)
         {
-            throw new NotImplementedException();
+            _characters[row, column] = value;
         }
 
         public void ClearValue(int row, int column)
         {
-            throw new NotImplementedException();
+            _characters[row, column] = null;
         }
 
         public Point GetCursor()
         {
-            throw new NotImplementedException();
+            return _cursor;
         }
 
         public void SetCursor(int row, int column)
         {
-            throw new NotImplementedException();
+            _cursor.Y = row;
+            _cursor.X = column;
         }
     }
 }

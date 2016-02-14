@@ -51,11 +51,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TerminalOutputterTests\MockTerminals\Empty.cs" />
-    <Compile Include="TerminalOutputterTests\MockTerminals\Example1.cs" />
-    <Compile Include="TerminalOutputterTests\MockTerminals\Example2.cs" />
+    <Compile Include="Mock\MockTerminals\MockTerminal.cs" />
+    <Compile Include="Mock\MockTerminals\Example1.cs" />
+    <Compile Include="Mock\MockTerminals\Example2.cs" />
     <Compile Include="TerminalOutputterTests\OutputTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mock\MockCursorMover.cs" />
+    <Compile Include="Mock\MockTerminalClearer.cs" />
+    <Compile Include="Mock\MockTerminalWriter.cs" />
+    <Compile Include="TerminalProcessorTests\WriteTest.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using Reddit253.TerminalWriters;
 
-namespace Reddit253.UnitTest.TerminalProcessorTests.Mock
+namespace Reddit253.UnitTest.Mock
 {
     internal class MockTerminalWriter : ITerminalWriter
     {

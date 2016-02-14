@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Reddit253.UnitTest.TerminalOutputterTests.MockTerminals;
+using Reddit253.UnitTest.Mock.MockTerminals;
 
 namespace Reddit253.UnitTest.TerminalOutputterTests
 {
@@ -12,7 +12,7 @@ namespace Reddit253.UnitTest.TerminalOutputterTests
         [TestMethod]
         public void Empty()
         {
-            var terminal = new Empty();
+            var terminal = new MockTerminal();
             var actual = _terminalOutputter.Output(terminal);
 
             Assert.IsNull(actual);
