@@ -1,19 +1,19 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Reddit253.UnitTest.TerminalWriterTests.MockTerminals;
+using Reddit253.UnitTest.TerminalOutputterTests.MockTerminals;
 
-namespace Reddit253.UnitTest.TerminalWriterTests
+namespace Reddit253.UnitTest.TerminalOutputterTests
 {
     [TestClass]
-    public class WriteTest
+    public class OutputTest
     {
-        private readonly ITerminalWriter _terminalWriter = new TerminalWriter();
+        private readonly ITerminalOutputter _terminalOutputter = new TerminalOutputter();
 
         [TestMethod]
         public void Empty()
         {
             var terminal = new Empty();
-            var actual = _terminalWriter.Write(terminal);
+            var actual = _terminalOutputter.Output(terminal);
 
             Assert.IsNull(actual);
         }
@@ -22,7 +22,7 @@ namespace Reddit253.UnitTest.TerminalWriterTests
         public void Example_1()
         {
             var terminal = new Example1();
-            var actual = _terminalWriter.Write(terminal);
+            var actual = _terminalOutputter.Output(terminal);
             var expected = string.Format(
                     "DDD  PPPP{0}" +
                     "D  D P   P{0}" +
@@ -41,7 +41,7 @@ namespace Reddit253.UnitTest.TerminalWriterTests
         public void Example_2()
         {
             var terminal = new Example2();
-            var actual = _terminalWriter.Write(terminal);
+            var actual = _terminalOutputter.Output(terminal);
             var expected = string.Format(
                     @"    ^{0}" +
                     @"   / \{0}" +

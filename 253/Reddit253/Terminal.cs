@@ -28,10 +28,15 @@ namespace Reddit253
             _characters[row, column] = null;
         }
 
+        public Point GetCursor()
+        {
+            return _cursor;
+        }
+
         public void SetCursor(int row, int column)
         {
-            _cursor.X = row;
-            _cursor.Y = column;
+            _cursor.Y = row;
+            _cursor.X = column;
         }
     }
 }

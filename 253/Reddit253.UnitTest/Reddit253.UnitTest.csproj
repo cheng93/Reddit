@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,10 +51,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TerminalWriterTests\MockTerminals\Empty.cs" />
-    <Compile Include="TerminalWriterTests\MockTerminals\Example1.cs" />
-    <Compile Include="TerminalWriterTests\MockTerminals\Example2.cs" />
-    <Compile Include="TerminalWriterTests\WriteTest.cs" />
+    <Compile Include="TerminalOutputterTests\MockTerminals\Empty.cs" />
+    <Compile Include="TerminalOutputterTests\MockTerminals\Example1.cs" />
+    <Compile Include="TerminalOutputterTests\MockTerminals\Example2.cs" />
+    <Compile Include="TerminalOutputterTests\OutputTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

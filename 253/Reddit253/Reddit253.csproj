@@ -40,12 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CursorMover.cs" />
+    <Compile Include="ICursorMover.cs" />
     <Compile Include="ITerminal.cs" />
-    <Compile Include="ITerminalWriter.cs" />
+    <Compile Include="ITerminalProcessor.cs" />
+    <Compile Include="ITerminalOutputter.cs" />
     <Compile Include="Solution.cs" />
     <Compile Include="Terminal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TerminalWriter.cs" />
+    <Compile Include="TerminalProcessor.cs" />
+    <Compile Include="TerminalOutputter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

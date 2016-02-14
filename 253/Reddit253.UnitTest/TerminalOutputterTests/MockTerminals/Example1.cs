@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Drawing;
 
-namespace Reddit253.UnitTest.TerminalWriterTests.MockTerminals
+namespace Reddit253.UnitTest.TerminalOutputterTests.MockTerminals
 {
     internal class Example1 : ITerminal
     {
@@ -34,6 +35,11 @@ namespace Reddit253.UnitTest.TerminalWriterTests.MockTerminals
         }
 
         public void ClearValue(int row, int column)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Point GetCursor()
         {
             throw new NotImplementedException();
         }

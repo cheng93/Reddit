@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -7,9 +6,9 @@ using System.Text;
 [assembly: InternalsVisibleTo("Reddit253.UnitTest")]    
 namespace Reddit253
 {
-    internal class TerminalWriter : ITerminalWriter
+    internal class TerminalOutputter : ITerminalOutputter
     {
-        public string Write(ITerminal terminal)
+        public string Output(ITerminal terminal)
         {
             var rowStrings = GetRowStrings(terminal);
             var output = ToString(rowStrings);
