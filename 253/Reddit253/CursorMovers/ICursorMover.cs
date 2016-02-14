@@ -1,4 +1,4 @@
-﻿namespace Reddit253
+﻿namespace Reddit253.CursorMovers
 {
     public interface ICursorMover
     {

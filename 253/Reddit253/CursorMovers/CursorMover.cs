@@ -1,4 +1,4 @@
-﻿namespace Reddit253
+﻿namespace Reddit253.CursorMovers
 {
     internal class CursorMover : ICursorMover
     {
