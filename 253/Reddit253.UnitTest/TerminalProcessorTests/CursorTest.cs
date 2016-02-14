@@ -26,7 +26,8 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
         public void Up()
         {
             var terminal = new MockTerminal();
-            _terminalProcessor.Process(terminal, "^44^u");
+            terminal.SetCursor(4, 4);
+            _terminalProcessor.Process(terminal, "^u");
 
             var actual = terminal.GetCursor();
             var expected = new Point(4, 3);
@@ -59,7 +60,8 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
         public void Down_CursorAtBottom()
         {
             var terminal = new MockTerminal();
-            _terminalProcessor.Process(terminal, "^90^d");
+            terminal.SetCursor(9, 0);
+            _terminalProcessor.Process(terminal, "^d");
 
             var actual = terminal.GetCursor();
             var expected = new Point(0, 9);
@@ -70,7 +72,8 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
         public void Left()
         {
             var terminal = new MockTerminal();
-            _terminalProcessor.Process(terminal, "^44^l");
+            terminal.SetCursor(4, 4);
+            _terminalProcessor.Process(terminal, "^l");
 
             var actual = terminal.GetCursor();
             var expected = new Point(3, 4);
@@ -103,7 +106,8 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
         public void Right_CursorOnRightSide()
         {
             var terminal = new MockTerminal();
-            _terminalProcessor.Process(terminal, "^09^r");
+            terminal.SetCursor(0, 9);
+            _terminalProcessor.Process(terminal, "^r");
 
             var actual = terminal.GetCursor();
             var expected = new Point(9, 0);
@@ -125,7 +129,8 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
         public void Home_NotStartAtHome()
         {
             var terminal = new MockTerminal();
-            _terminalProcessor.Process(terminal, "^44^h");
+            terminal.SetCursor(4, 4);
+            _terminalProcessor.Process(terminal, "^h");
 
             var actual = terminal.GetCursor();
             var expected = new Point(0, 0);
@@ -147,7 +152,8 @@ namespace Reddit253.UnitTest.TerminalProcessorTests
         public void Beginning_NotStartAtHome()
         {
             var terminal = new MockTerminal();
-            _terminalProcessor.Process(terminal, "^44^b");
+            terminal.SetCursor(4, 4);
+            _terminalProcessor.Process(terminal, "^b");
 
             var actual = terminal.GetCursor();
             var expected = new Point(0, 4);
