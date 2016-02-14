@@ -60,6 +60,7 @@
     <Compile Include="Mock\MockCursorMover.cs" />
     <Compile Include="Mock\MockTerminalClearer.cs" />
     <Compile Include="Mock\MockTerminalWriter.cs" />
+    <Compile Include="TerminalProcessorTests\CursorTest.cs" />
     <Compile Include="TerminalProcessorTests\WriteTest.cs" />
   </ItemGroup>
   <ItemGroup />
