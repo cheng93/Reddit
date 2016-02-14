@@ -1,6 +1,6 @@
 ﻿namespace Reddit253.TerminalWriters
 {
-    internal interface ITerminalWriter
+    public interface ITerminalWriter
     {
         void Write(ITerminal terminal, char value);
     }
