@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Reddit257.Intermediate
 {
@@ -13,7 +14,7 @@ namespace Reddit257.Intermediate
 
         public IEnumerable<string> Grab(string prefix, int length)
         {
-            throw new System.NotImplementedException();
+            return _wordBank.Where(w => w.StartsWith(prefix) && w.Length == length);
         }
     }
 }
