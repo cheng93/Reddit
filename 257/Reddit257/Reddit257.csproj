@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Intermediate\IWordBank.cs" />
+    <Compile Include="Intermediate\IWordGrabber.cs" />
     <Compile Include="Intermediate\Solution.cs" />
     <Compile Include="Intermediate\WordBank.cs" />
+    <Compile Include="Intermediate\WordGrabber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
