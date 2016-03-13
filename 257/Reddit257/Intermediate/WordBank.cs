@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Reddit257.Intermediate
 {
-    internal class WordBank : IWordBank
+    public class WordBank : IWordBank
     {
         public IEnumerable<string> Get()
         {
-            return File.ReadLines("../enable1.txt");
+            return Properties.Resources.enable1.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
         }
     }
 }

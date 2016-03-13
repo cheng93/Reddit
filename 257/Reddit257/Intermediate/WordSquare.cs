@@ -7,7 +7,7 @@ namespace Reddit257.Intermediate
     {
         public string GetWord(int column)
         {
-            if (Count >= column)
+            if (Count > column)
             {
                 return this[column];
             }
