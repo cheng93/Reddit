@@ -1,7 +1,9 @@
-﻿namespace Reddit257.Intermediate
+﻿using System.Collections.Generic;
+
+namespace Reddit257.Intermediate
 {
     public interface IWordGrabber
     {
-        string Grab(string prefix, int length);
+        IEnumerable<string> Grab(string prefix, int length);
     }
 }

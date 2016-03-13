@@ -1,8 +1,17 @@
-﻿namespace Reddit257.Intermediate
+﻿using System.Collections.Generic;
+
+namespace Reddit257.Intermediate
 {
     internal class WordGrabber : IWordGrabber
     {
-        public string Grab(string prefix, int length)
+        private readonly IEnumerable<string> _wordBank;
+
+        public WordGrabber(IEnumerable<string> wordBank)
+        {
+            _wordBank = wordBank;
+        }
+
+        public IEnumerable<string> Grab(string prefix, int length)
         {
             throw new System.NotImplementedException();
         }
